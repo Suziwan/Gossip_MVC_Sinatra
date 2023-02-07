@@ -2,7 +2,7 @@
 Week 5 Day 1 - Gossip app in MVC with Sinatra
 
 Start the program using "$ shotgun -p 4567" or "$ rackup -p 4567" in the terminal.
-Ruby version 2.7.4 is needed for this project. (bash --login, rvm install 2.7.4, rvm use 2.7.4)
+NB: Ruby version 2.7.4 is needed for this project. (bash --login, rvm install 2.7.4, rvm use 2.7.4)
 
 ## Config.ru (rack up file)
 We run the controller from here.
