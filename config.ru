@@ -9,6 +9,6 @@ run ApplicationController
 # Dans le terminal : $ rackup
 # http://localhost:9292/
 
-# $ rackup -p 4567
+# $ rackup -p 4567 or $ shotgun -p 4567
 # http://localhost:4567/
-# http://localhost:4567/gossips/new
+# http://localhost:4567/gossips/new/

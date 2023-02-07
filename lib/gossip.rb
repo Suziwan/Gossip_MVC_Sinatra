@@ -1,5 +1,4 @@
 require 'csv'
-require 'pry'
 
 class Gossip 
   attr_accessor :author, :content
@@ -25,8 +24,19 @@ class Gossip
   end
 
   def self.find_by_id(id)
-    all[id - 1]
+    nb = (id.to_i) - 1
+    all[nb]
+  end
+
+  def self.edit(author, content, id)
+    nb = (id.to_i) - 1
+    all_gossips = self.all
+    all_gossips[nb].author = author
+    all_gossips[nb].content = content
+    CSV.open('db/gossip.csv', 'w') do |csv| 
+      all_gossips.each do |row|
+        csv << [row.author,row.content]
+      end
+    end
   end
 end
-
-#binding.pry
