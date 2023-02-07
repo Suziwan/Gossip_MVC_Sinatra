@@ -2,7 +2,7 @@ require 'csv'
 require 'pry'
 
 class Gossip 
-  attr_reader :author, :content
+  attr_accessor :author, :content
 
   def initialize(author, content)
     @author = author
@@ -18,11 +18,14 @@ class Gossip
 
   def self.all 
     all_gossips = []
-    CSV.foreach("./db/gossip.csv") do |gossip|
-      gossip_prov = Gossip.new(gossip[0], gossip[1])
-      all_gossips << gossip_prov
+    CSV.foreach("./db/gossip.csv") do |csv_line|
+      all_gossips << Gossip.new(csv_line[0], csv_line[1])
     end
     return all_gossips
+  end
+
+  def self.find_by_id(id)
+    all[id - 1]
   end
 end
 

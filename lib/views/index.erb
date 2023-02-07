@@ -3,6 +3,15 @@
     <title>The Gossip Project</title>
   </head>
   <body>
-    <h1>My super gossip website <<< !</h1>
+    <h2>Welcome to the gossip platform !</h2>
+    <a href='/gossips/new/'>Start a new gossip here </a>
+    <% gossips.each_with_index do |gossip, i| %>
+      <p>
+        <strong>Gossip nº <%= i + 1 %></br></strong>
+        Author : <%= gossip.author %></br>
+        Content : <%= gossip.content %></br>
+        <a href='/gossips/<%= i + 1 %>/'>Go to gossip nº <%= i + 1 %> page </a>
+      </p>
+    <% end %>
   </body>
 </html>
